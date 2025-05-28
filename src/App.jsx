@@ -16,6 +16,7 @@ import SkyggeQuiz1Done from "./components/SkyggeQuiz1Done";
 import SkyggeQuiz2Done from "./components/SkyggeQuiz2Done";
 import SkyggeQuiz3Done from "./components/SkyggeQuiz3Done";
 import SkyggeQuizOutro from "./views/SkyggeQuizOutro";
+import SkyggeQuizOutroLevel from "./views/SkyggeQuizOutroLevel";
 import ModulerUnderEmner from "./views/ModulerUnderEmner";
 import SofieLevels from "./views/LevelsSofie";
 import Venner from "./views/Venner";
@@ -56,6 +57,7 @@ const router = createBrowserRouter([
       { path: "/app/modul1/skyggequiz2Done", element: <SkyggeQuiz2Done /> },
       { path: "/app/modul1/skyggequiz3Done", element: <SkyggeQuiz3Done /> },
       { path: "/app/modul1/skyggequizoutro", element: <SkyggeQuizOutro /> },
+      { path: "/app/skyggequizoutrolevel", element: <SkyggeQuizOutroLevel /> },
       { path: "/app/moduler", element: <Moduler /> },
       { path: "/app/avatar", element: <Avatar /> },
       { path: "/app/avatarhoved", element: <AvatarHoved /> },

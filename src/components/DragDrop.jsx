@@ -6,6 +6,11 @@ import {
   useDraggable,
   useDroppable,
   closestCenter,
+  PointerSensor,
+  TouchSensor,
+  MouseSensor,
+  useSensor,
+  useSensors,
 } from "@dnd-kit/core";
 import HulenSVG from "../assets/images/HulenSVG.svg";
 import SkyggerneSVG from "../assets/images/SkyggerneSVG.svg";
@@ -56,6 +61,7 @@ const DropBox = ({ id, matchedConcept, isIncorrect }) => {
               src={matchedConceptObj.image}
               alt={matchedConceptObj.label}
               className="matched-image"
+              draggable="false"
             />
             <div className="matched-label">{matchedConceptObj.label}</div>
           </motion.div>
@@ -88,6 +94,7 @@ const DraggableBox = ({ concept }) => {
         src={concept.image}
         alt={concept.label}
         className="draggable-image"
+        draggable="false"
       />
       <div className="image-label">{concept.label}</div>
     </div>
@@ -102,21 +109,31 @@ const DragDropGame = () => {
   const [incorrectDrop, setIncorrectDrop] = useState(null);
   const navigate = useNavigate();
 
-  useEffect(() => {
-  if (Object.keys(matched).length === EXPLANATIONS.length) {
-    const timer = setTimeout(() => {
-      navigate("/app/modul1/skyggequiz3Done");
-    }, 2000);
+  const sensors = useSensors(
+    useSensor(PointerSensor),
+    useSensor(TouchSensor, {
+      activationConstraint: {
+        delay: 300,
+        tolerance: 10,
+      },
+    })
+  );
 
-    return () => clearTimeout(timer); // clean up
-  }
-}, [matched, navigate]);
+  useEffect(() => {
+    if (Object.keys(matched).length === EXPLANATIONS.length) {
+      const timer = setTimeout(() => {
+        navigate("/app/modul1/skyggequiz3Done");
+      }, 2000);
+      return () => clearTimeout(timer);
+    }
+  }, [matched, navigate]);
 
   const unmatchedConcepts = CONCEPTS.filter(
     (concept) => !Object.values(matched).includes(concept.id)
   );
 
   const handleDragEnd = (event) => {
+    console.log("DRAG END:", event);
     const { over, active } = event;
 
     if (over) {
@@ -144,20 +161,22 @@ const DragDropGame = () => {
   };
 
   return (
-    <DndContext collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
+    <DndContext
+      sensors={sensors}
+      collisionDetection={closestCenter}
+      onDragEnd={handleDragEnd}
+    >
       <div className="game-container">
-        
         <img
           src={elefanttaler}
           className="elefanttaler-skyggequiz1"
           alt="elefant"
         />
-
         <div className="tekstinfo">
           <h4>Hvilke begreber passer sammen?</h4>
           <h3>
-            Se godt på de fire begreber og udsagn. Sæt dem der passer sammen ved
-            at trække stenene op
+            Se godt på de fire begreber og udsagn. Sæt dem der passer sammen
+            ved at trække stenene op
           </h3>
         </div>
         <div className="drop-container">
@@ -178,11 +197,7 @@ const DragDropGame = () => {
         </div>
 
         {showFeedback && (
-          <div
-            className={`feedback ${
-              isCorrect ? "correct" : "incorrect"
-            }`}
-          >
+          <div className={`feedback ${isCorrect ? "correct" : "incorrect"}`}>
             {feedback}
           </div>
         )}
@@ -190,5 +205,6 @@ const DragDropGame = () => {
     </DndContext>
   );
 };
+
 
 export default DragDropGame;

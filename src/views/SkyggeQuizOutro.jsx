@@ -8,7 +8,7 @@ const GifRedirectPage = () => {
 
   useEffect(() => {
     const handleEnded = () => {
-      navigate("/nextpage");
+      navigate("/app/skyggequizoutrolevel");
     };
 
     const video = videoRef.current;

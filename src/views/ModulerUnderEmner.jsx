@@ -30,7 +30,7 @@ function ModulerUnder() {
         {categories.map((category) => {
           const isLink = category === "Sofies verden";
           const linkTo =
-            category === "Sofies verden" ? "/app/sofielevels" : null;
+            category === "Sofies verden" ? "/app/introvideosofie" : null;
 
           return isLink ? (
             <Link
