@@ -1,0 +1,177 @@
+/* Container for hele spillet */
+.game-container {
+  background-image: url("/src/assets/skyggequiz/modul1/hulen.svg");
+  background-size: cover; /* make the image cover the box */
+  background-position: center; /* center the image */
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0px 16px;
+  padding-top: 8vh;
+  padding-bottom: 8vh;
+  height: 100vh;
+}
+
+/* Øverste område med forklaringer og drop-zoner */
+.drop-container {
+  flex-wrap: wrap;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 1rem;
+  padding: 2vh 0px;
+}
+
+/* En forklaring + tilhørende dropzone */
+.drop-box-label-wrapper {
+  position: relative;
+  display: flex;
+  flex: 1 1;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+  background: #f7f7f7;
+  box-shadow: 0px 5px 4px 0px rgba(0, 0, 0, 0.25);
+  padding: 5vw;
+  border-radius: 20px;
+  gap: 2vh;
+  color: #414141;
+  font-family: "new-zen", sans-serif;
+  font-size: 4vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration: none;
+}
+
+/* Teksten der forklarer */
+.label-text {
+  flex: 1;
+  font-size: 1rem;
+}
+
+/* Drop-zonen */
+.drop-box {
+  width: 20vw;
+  height: 10vh;
+  background-color: #e2e2e2;
+  border: 2px dashed #999;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Begreb placeret korrekt */
+.matched-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  width: 120px;
+  height: 123px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.matched-image {
+  width: 20vw;
+  height: auto;
+  display: block;
+}
+
+.matched-label {
+  position: absolute;
+  bottom: 32px;
+  width: 100%;
+  color: #414141;
+  font-family: "new-zen", sans-serif;
+  font-size: 4vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-align: center;
+  color: white;
+  text-shadow: 0 0 3px black;
+  pointer-events: none; /* so clicks don't affect label */
+}
+
+/* Nederste område med de flytbare begreber */
+.drag-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  max-width: 600px;
+  padding-bottom: 5vh;
+}
+
+/* Flytbare bokse */
+.draggable-box {
+  position: relative;
+  height: auto;
+  cursor: grab;
+}
+
+.draggable-image {
+  width: 20vw;
+  height: auto;
+  display: block;
+}
+
+.drop-box.incorrect {
+  border: 2px solid red;
+  animation: shake 0.3s ease-in-out;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-4px);
+  }
+  50% {
+    transform: translateX(4px);
+  }
+  75% {
+    transform: translateX(-4px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.feedback-message {
+  position: absolute;
+  bottom: 5%;
+  margin-top: 1rem;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.image-label {
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  color: #414141;
+  font-family: "new-zen", sans-serif;
+  font-size: 4vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-align: center;
+  color: white;
+  text-shadow: 0 0 3px black;
+  pointer-events: none; /* so clicks don't affect label */
+}

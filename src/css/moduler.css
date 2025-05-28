@@ -1,0 +1,130 @@
+.emnerblokke {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.blokke {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.blokke img {
+  display: block;
+  width: 40vw;
+}
+
+.modulcontainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0px 16px;
+  padding-bottom: calc(var(--navbar-height) + 3vh);
+  padding-top: 8vh;
+  height: 100vh;
+}
+
+.headline {
+  color: #414141;
+  font-family: "new-zen", sans-serif;
+  font-size: 10vw;
+  text-align: center;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-decoration: none;
+}
+
+.tilbageknap {
+  position: absolute;
+  top: 3%;
+  display: block;
+  width: 7vw;
+  cursor: pointer;
+}
+
+.tilbageknaplevels {
+  z-index: 5;
+  position: absolute;
+  top: 3%;
+  left: 16px;
+  display: block;
+  width: 7vw;
+  cursor: pointer;
+}
+
+.levelsinlinesvg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.levelscontainer {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.svg-wrapper {
+  width: 100%;
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.levelogknap {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  padding-bottom: var(--navbar-height);
+}
+
+.button-grid-moduler {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: space-between;
+}
+
+.category-button-moduler {
+  display: inline-block;
+  width: calc(50% - 12px);
+  padding: 0vh 4px;
+  height: 20vh;
+  border-radius: 20px;
+  background: var(--bl, #0eb7de);
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
+  color: #ffffff;
+  font-family: "new-zen", sans-serif;
+  font-size: 4vw;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-decoration: none;
+  border: none;
+}
+
+.link-button-moduler {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.headline-underemner {
+  color: #414141;
+  font-family: "new-zen", sans-serif;
+  font-size: 8vw;
+  text-align: center;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-decoration: none;
+}
+
+@media (max-height: 700px) {
+  .streglevelknap {
+    top: 79%;
+  }
+}
