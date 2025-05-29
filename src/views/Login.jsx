@@ -80,10 +80,10 @@ function Login() {
             {isRegister ? "Log In" : "her"}
           </button>
         </p>
+        <button className="loginknap" type="submit">
+          {isRegister ? "Opret" : "Login"}
+        </button>
       </form>
-      <button className="loginknap" type="submit">
-        {isRegister ? "Opret" : "Login"}
-      </button>
       {error && <p>{error}</p>}
     </div>
   );
