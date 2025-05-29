@@ -1,11 +1,11 @@
-import avatarImage from "../assets/avatarstor.svg";
 import { Link } from "react-router-dom";
 import { useAvatar } from "../context/AvatarContext";
 import "../css/Avatar.css";
 
-function Avatar() {
 
-const { avatarSrc, changeAvatar } = useAvatar();
+function Avatar() {
+  
+  const { avatarSrc } = useAvatar();
 
   const categories = [
     "Briller",
@@ -18,7 +18,7 @@ const { avatarSrc, changeAvatar } = useAvatar();
 
   return (
     <div className="avatar-page">
-      <h1>Din elefant venter på sit outfit!</h1>
+      <h1>Ellie venter på sit outfit!</h1>
 
       <div className="avatar-image-container">
         <img src={avatarSrc} alt="Avatar" className="avatar-image" />
@@ -29,9 +29,9 @@ const { avatarSrc, changeAvatar } = useAvatar();
           const isLink = category === "Hovedbeklædning" || category === "Tøj";
           const linkTo =
             category === "Hovedbeklædning"
-              ? "/app/avatarhoved"
+              ? "/app/avatar/hoved"
               : category === "Tøj"
-              ? "/app/toj"
+              ? "/app/avatar/toej"
               : null;
 
           return isLink ? (

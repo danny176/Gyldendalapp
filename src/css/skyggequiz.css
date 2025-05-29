@@ -215,3 +215,13 @@
   right: 3%;
   z-index: 2;
 }
+
+.correct-answer1 {
+  background-color: #4caf50 !important; /* grøn */
+  color: white !important;
+}
+
+.wrong-answer1 {
+  background-color: #f44336 !important; /* rød */
+  color: white !important;
+}

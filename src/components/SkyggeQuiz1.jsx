@@ -48,33 +48,36 @@ export default function SkyggeQuiz() {
   const [erKorrekt, setErKorrekt] = useState(false);
   const [visOverlay, setVisOverlay] = useState(false);
   const navigate = useNavigate();
+  const [valgtSvar, setValgtSvar] = useState(null);
+  const nuvaerendeSpoergsmaal = spoergsmaal[aktivtSpoergsmaal];
 
   const haandterSvar = (valg) => {
     const nuvaerende = spoergsmaal[aktivtSpoergsmaal];
     const korrekt = valg === nuvaerende.korrektSvar;
 
+    setValgtSvar(valg);
     setErKorrekt(korrekt);
     setBesked(
       korrekt ? nuvaerende.kommentar.rigtig : nuvaerende.kommentar.forkert
     );
     setVisBesked(true);
 
-    if (korrekt) {
-      setTimeout(() => {
-        setVisBesked(false);
+    setTimeout(() => {
+      setVisBesked(false);
+      setValgtSvar(null);
+
+      if (korrekt) {
         if (aktivtSpoergsmaal < spoergsmaal.length - 1) {
           setAktivtSpoergsmaal(aktivtSpoergsmaal + 1);
         } else {
           navigate("/app/modul1/skyggequiz1Done");
         }
-      }, 2000);
-    }
+      }
+    }, 2000);
   };
 
   const lukOverlay = () => setVisOverlay(false);
   const aabnOverlay = () => setVisOverlay(true);
-
-  const nuvaerendeSpoergsmaal = spoergsmaal[aktivtSpoergsmaal];
 
   return (
     <div className="container-skyggequiz1">
@@ -82,7 +85,7 @@ export default function SkyggeQuiz() {
         <h4>Se godt på skyggen og gæt hvad det er</h4>
       </div>
 
-            <img
+      <img
         src={elefanttaler}
         className="elefanttaler-skyggequiz1"
         alt="elefant"
@@ -109,8 +112,14 @@ export default function SkyggeQuiz() {
           <button
             key={valg}
             onClick={() => haandterSvar(valg)}
-            className="answer-button-quiz1"
-            disabled={visBesked && erKorrekt}
+            className={`answer-button-quiz1 ${
+              valgtSvar === valg
+                ? valg === nuvaerendeSpoergsmaal.korrektSvar
+                  ? "correct-answer1"
+                  : "wrong-answer1"
+                : ""
+            }`}
+            disabled={!!valgtSvar}
           >
             {valg}
           </button>

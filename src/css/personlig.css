@@ -13,6 +13,16 @@
   height: 100vh;
 }
 
+.personligcontainer h1 {
+  color: #414141;
+  text-align: center;
+  font-family: "new-zen";
+  font-size: 10vw;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
 .knapperkol button {
   display: flex;
   width: 404px;
@@ -22,8 +32,79 @@
   align-items: center;
   flex-shrink: 0;
   border-radius: 20px;
-  background: #000;
-  color: white;
+  background: var(--hvid, #fff);
+  /* skygge */
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
   border: none;
   cursor: pointer;
+  color: #000;
+  font-family: "new-zen", sans-serif;
+  font-size: 4vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.logudknappersonlig {
+  background: var(--bl, #0eb7de) !important;
+  color: white !important;
+}
+
+.venner-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 0px 16px;
+  padding-bottom: var(--navbar-height);
+  padding-top: 8vh;
+  height: 100vh;
+}
+
+.leader-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5vh;
+}
+
+.leader-container img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.venner-container {
+  color: #414141;
+  text-align: center;
+  font-family: "new-zen";
+  font-size: 6vw;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.venner-button {
+  border-radius: 20px;
+  background: var(--bl, #0eb7de) !important;
+  color: white !important;
+  /* skygge */
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
+  border: none;
+  cursor: pointer;
+  font-family: "new-zen", sans-serif;
+  font-size: 4vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 2vh 0px;
+}
+
+.venicon {
+  position: absolute;
+  top: 3%;
+  right: 0;
+  display: block;
+  width: 7vw;
+  cursor: pointer;
+  margin-right: 16px;
 }

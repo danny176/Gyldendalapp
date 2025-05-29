@@ -19,7 +19,7 @@ function Moduler() {
         {categories.map((category) => {
           const isLink = category === "Filosofi";
           const linkTo =
-            category === "Filosofi" ? "/app/modulerunderemner" : null;
+            category === "Filosofi" ? "/app/moduler/underemner" : null;
 
           return isLink ? (
             <Link

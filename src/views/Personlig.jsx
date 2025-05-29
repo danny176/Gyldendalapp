@@ -21,14 +21,13 @@ function Personlig() {
   return (
     <div className="personligcontainer">
       <h1>
-        Lorem ipsum dolor sit amet consectetur. Ultricies praesent non feugiat
-        cursus lectus.
+        Min profil
       </h1>
       <div className="knapperkol">
-        <button onClick={() => navigate("/app/venner")}>Venner</button>
+        <button onClick={() => navigate("/app/personlig/venner")}>Venner</button>
         <button>Gennemførte moduler</button>
         <button>Indstillinger</button>
-        <button onClick={handleLogout}>Log ud</button>
+        <button className="logudknappersonlig" onClick={handleLogout}>Log ud</button>
       </div>
     </div>
   );

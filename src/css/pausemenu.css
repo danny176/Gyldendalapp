@@ -11,11 +11,24 @@
 
 .overlay-content {
   background: white;
-  padding: 0px 12vw;
+  padding: 5vh 12vw;
   border-radius: 20px;
   text-align: center;
   position: relative;
   width: 90%;
+}
+
+.overlay-content h2 {
+  padding-bottom: 3vh;
+  color: rgb(31, 31, 31);
+  border: none;
+  text-align: center;
+  font-family: "new-zen", sans-serif;
+  font-size: 6vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration: none;
 }
 
 .knap-gruppe {
@@ -29,14 +42,19 @@
 
 .knap-gruppe button {
   flex: 1;
-  padding: 12px 16px;
+  width: 100%;
+  padding: 2vh 0px;
+  border-radius: 20px;
+  background: var(--bl, #0eb7de);
+  color: rgb(255, 255, 255);
   border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: bold;
-  background-color: rgb(112, 112, 112);
-  color: white;
-  transition: background-color 0.2s ease;
+  text-align: center;
+  font-family: "new-zen", sans-serif;
+  font-size: 4vw;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-decoration: none;
 }
 
 .knap-gruppe button:active {

@@ -1,6 +1,5 @@
 import "../css/Avatar.css";
-import hatIcon from "../assets/icons/hat.svg";
-import blomstIcon from "../assets/icons/blomstikon.svg";
+import supermanIkon from "../assets/icons/superikon.svg";
 import removeIcon from "../assets/icons/removeitem.svg";
 import questionIcon from "../assets/icons/question.svg";
 import { useAvatar } from "../context/AvatarContext";
@@ -10,13 +9,12 @@ import { useNavigate } from "react-router-dom";
 function Hovedbeklaedning() {
   const navigate = useNavigate();
 
-  const { setHeadwear } = useAvatar();
+  const { setClothing } = useAvatar();
 
-  const handleHatClick = () => setHeadwear("hat");
-  const handleBlomstClick = () => setHeadwear("flower");
-  const handleRemoveClick = () => setHeadwear("none");
+  const handleSuperClick = () => setClothing("superman");
+  const handleRemoveClick = () => setClothing("default");
 
-  const { avatarSrc } = useAvatar();
+  const { avatarSrc, changeAvatar } = useAvatar();
 
   return (
     <div className="avatar-page">
@@ -35,7 +33,7 @@ function Hovedbeklaedning() {
         <img src={avatarSrc} alt="Avatar" className="avatar-image" />
       </div>
 
-      <h2 className="category-title">Hovedbeklædning</h2>
+      <h2 className="category-title">Tøj</h2>
 
       <div className="icon-grid">
         <img
@@ -45,18 +43,12 @@ function Hovedbeklaedning() {
           onClick={handleRemoveClick}
         />
         <img
-          src={hatIcon}
+          src={supermanIkon}
           alt="Hat"
           className="item-icon"
-          onClick={handleHatClick}
+          onClick={handleSuperClick}
         />
-        <img
-          src={blomstIcon}
-          alt="Blomst"
-          className="item-icon"
-          onClick={handleBlomstClick}
-        />
-        {Array.from({ length: 5 }).map((_, i) => (
+        {Array.from({ length: 6 }).map((_, i) => (
           <img
             key={i}
             src={questionIcon}

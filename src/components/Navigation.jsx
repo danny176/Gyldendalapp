@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import hjemikon from "../assets/icons/hjemikon.svg";
 import hjemikonActive from "../assets/icons/hjemikon_active.svg";
 import modulerikon from "../assets/icons/modulerikon.svg";
@@ -9,6 +9,14 @@ import personligikon from "../assets/icons/personligikon.svg";
 import personligikonActive from "../assets/icons/personligikon_active.svg";
 
 export default function Navigation() {
+  const location = useLocation();
+
+  // Match everything under /app/moduler or its subpaths
+  const isModulerActive = location.pathname.startsWith("/app/moduler");
+
+  const isAvatarActive = location.pathname.startsWith("/app/avatar");
+  const isPersonligActive = location.pathname.startsWith("/app/personlig");
+
   return (
     <nav>
       <div className="navikoner">
@@ -19,27 +27,24 @@ export default function Navigation() {
         </NavLink>
 
         <NavLink to="/app/moduler">
-          {({ isActive }) => (
-            <img
-              src={isActive ? modulerikonActive : modulerikon}
-              alt="Moduler"
-            />
-          )}
+          <img
+            src={isModulerActive ? modulerikonActive : modulerikon}
+            alt="Moduler"
+          />
         </NavLink>
 
         <NavLink to="/app/avatar">
-          {({ isActive }) => (
-            <img src={isActive ? avatarikonActive : avatarikon} alt="Avatar" />
-          )}
+          <img
+            src={isAvatarActive ? avatarikonActive : avatarikon}
+            alt="Avatar"
+          />
         </NavLink>
 
         <NavLink to="/app/personlig">
-          {({ isActive }) => (
-            <img
-              src={isActive ? personligikonActive : personligikon}
-              alt="Personlig"
-            />
-          )}
+          <img
+            src={isPersonligActive ? personligikonActive : personligikon}
+            alt="Personlig"
+          />
         </NavLink>
       </div>
     </nav>

@@ -5,6 +5,7 @@ import Forside from "./views/Forside";
 import Moduler from "./views/Moduler";
 import Avatar from "./views/Avatar";
 import AvatarHoved from "./views/AvatarHoved";
+import AvatarToej from "./views/AvatarToej";
 import Personlig from "./views/Personlig";
 import Login from "./views/Login";
 import ProtectedRoute from "./components/ProtectedRoute";
@@ -47,12 +48,12 @@ const router = createBrowserRouter([
       { path: "/app/modul1/skyggequiz4", element: <SkyggeQuiz4 /> },
       { path: "/app/modul1/dragndrop", element: <DragDrop /> },
       {
-        path: "/app/introvideosofie",
+        path: "/app/moduler/introvideosofie",
         element: <IntroVideoSofie />,
       },
-      { path: "/app/modulerunderemner", element: <ModulerUnderEmner /> },
+      { path: "/app/moduler/underemner", element: <ModulerUnderEmner /> },
       { path: "/app/sofielevels", element: <SofieLevels /> },
-      { path: "/app/venner", element: <Venner /> },
+      { path: "/app/personlig/venner", element: <Venner /> },
       { path: "/app/modul1/skyggequiz1Done", element: <SkyggeQuiz1Done /> },
       { path: "/app/modul1/skyggequiz2Done", element: <SkyggeQuiz2Done /> },
       { path: "/app/modul1/skyggequiz3Done", element: <SkyggeQuiz3Done /> },
@@ -60,7 +61,8 @@ const router = createBrowserRouter([
       { path: "/app/skyggequizoutrolevel", element: <SkyggeQuizOutroLevel /> },
       { path: "/app/moduler", element: <Moduler /> },
       { path: "/app/avatar", element: <Avatar /> },
-      { path: "/app/avatarhoved", element: <AvatarHoved /> },
+      { path: "/app/avatar/hoved", element: <AvatarHoved /> },
+      { path: "/app/avatar/toej", element: <AvatarToej /> },
       { path: "/app/personlig", element: <Personlig /> },
     ],
   },
