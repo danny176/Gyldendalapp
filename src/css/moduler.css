@@ -37,6 +37,8 @@
 
 .tilbageknap {
   position: absolute;
+  left: 0;
+  margin-left: 16px;
   top: 3%;
   display: block;
   width: 7vw;

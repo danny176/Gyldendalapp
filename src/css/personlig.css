@@ -1,6 +1,8 @@
 .knapperkol {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 24px;
 }
 
@@ -25,15 +27,14 @@
 
 .knapperkol button {
   display: flex;
-  width: 404px;
-  height: 76px;
-  padding: 26px 0px;
+  width: 100%;
+  height: auto;
+  padding: 24px 0px;
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
   border-radius: 20px;
   background: var(--hvid, #fff);
-  /* skygge */
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
   border: none;
   cursor: pointer;
@@ -51,11 +52,13 @@
 }
 
 .venner-container {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  align-items: center;
   padding: 0px 16px;
-  padding-bottom: var(--navbar-height);
+  padding-bottom: calc(var(--navbar-height) + 3vh);
   padding-top: 8vh;
   height: 100vh;
 }
@@ -67,13 +70,13 @@
   gap: 5vh;
 }
 
-.leader-container img {
+.leader1-icon {
   display: block;
   width: 100%;
   height: auto;
 }
 
-.venner-container {
+.venner-container h2 {
   color: #414141;
   text-align: center;
   font-family: "new-zen";
@@ -85,9 +88,9 @@
 
 .venner-button {
   border-radius: 20px;
+  width: 50%;
   background: var(--bl, #0eb7de) !important;
   color: white !important;
-  /* skygge */
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
   border: none;
   cursor: pointer;
@@ -107,4 +110,57 @@
   width: 7vw;
   cursor: pointer;
   margin-right: 16px;
+}
+
+.top4knap {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 15px;
+  color: #414141;
+  background: var(--hvid, #fff);
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
+  padding: 16px 16px;
+  font-family: "new-zen", sans-serif;
+  font-size: 4vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.badgeogantal {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.badgeicon {
+  display: block;
+  width: 5vw;
+  height: auto;
+}
+
+.top4kknapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.top4knapbruger {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 15px;
+  color: #414141;
+  background: var(--hvid, #fff);
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
+  padding: 16px 16px;
+  font-family: "new-zen", sans-serif;
+  font-size: 4vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  border: 1px solid var(--mrkegr, #b3b2b2);
 }

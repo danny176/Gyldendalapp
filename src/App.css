@@ -10,7 +10,10 @@
 
 body {
   font-family: sans-serif;
-  background-color: white;
+  background: var(
+    --gradien-lilla-bl,
+    linear-gradient(180deg, #f3e5f5 0%, #e7ffff 100%)
+  );
 }
 
 nav {
@@ -62,6 +65,7 @@ nav {
 
 .avatarognavn {
   display: flex;
+  align-items: flex-start;
   gap: 18px;
 }
 
@@ -228,4 +232,18 @@ nav {
   .avartarboks {
     padding: 2vh 0px;
   }
+}
+
+.brugernavnogbadge {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.badgeogantal {
+  font-family: "new-zen", sans-serif;
+  font-size: 5vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }

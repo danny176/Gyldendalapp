@@ -4,9 +4,9 @@ import avatarImage from "../assets/avatar.svg";
 import klokkeIkon from "../assets/icons/klokkeikon.svg";
 import fort from "../assets/icons/fortfor.svg";
 import udforsk from "../assets/icons/udforskicon.svg";
-import avatarfor from "../assets/avatarstor.svg";
 import leaderboard from "../assets/icons/leaderboardicon.svg";
 import ugenemne from "../assets/icons/ugenemnefor.svg";
+import badge from "../assets/badge.svg";
 import { useAvatar } from "../context/AvatarContext";
 
 function Forside() {
@@ -18,9 +18,15 @@ function Forside() {
       <header className="forside-header">
         <div className="avatarognavn">
           <img src={avatarImage} alt="Avatar" className="forside-avatar" />
-          <h2 className="forside-username">
-            Velkommen <span>{user?.displayName || "Bruger"}!</span>
-          </h2>
+          <div className="brugernavnogbadge">
+            <h2 className="forside-username">
+              Velkommen <span>{user?.displayName || "Bruger"}!</span>
+            </h2>
+            <div className="badgeogantal">
+              <img src={badge} alt="badge" className="badgeicon" />
+              <h5>0</h5>
+            </div>
+          </div>
         </div>
         <img src={klokkeIkon} alt="Klok" className="forside-klokke" />
       </header>
@@ -47,7 +53,7 @@ function Forside() {
           <img src={ugenemne} alt="udforsk emner" />
           <h4>Ugens emne</h4>
         </div>
-        <Link to="/app/venner" className="link-wrapper">
+        <Link to="/app/personlig/venner" className="link-wrapper">
           <div className="nedersterkasser">
             <img
               src={leaderboard}
