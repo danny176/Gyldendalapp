@@ -67,7 +67,7 @@ const LevelsPageComplete = () => {
               </button>
               <button
                 className="button2row"
-                onClick={() => navigate("/app/venner")}
+                onClick={() => navigate("/app/personlig/venner")}
               >
                 Leaderboard
               </button>

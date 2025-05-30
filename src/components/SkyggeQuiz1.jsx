@@ -16,7 +16,7 @@ const spoergsmaal = [
     svarMuligheder: ["Kat", "Hund", "Hest"],
     kommentar: {
       forkert: "Skygger er ikke virkeligheden... prøv igen!",
-      rigtig: "Ja! Du følger lyset mod sandheden!",
+      rigtig: "Ja! Platon mente at skygger kun er en svag afspejling af virkeligheden.",
     },
   },
   {
@@ -26,7 +26,7 @@ const spoergsmaal = [
     svarMuligheder: ["Plante", "Busk", "Træ"],
     kommentar: {
       forkert: "Det var ikke helt rigtigt. Kig nærmere på skyggens form.",
-      rigtig: "Ja! Du følger lyset mod sandheden!",
+      rigtig: "Ja! Platon mente at skygger kun er en svag afspejling af virkeligheden.",
     },
   },
   {
@@ -36,7 +36,7 @@ const spoergsmaal = [
     svarMuligheder: ["Pind", "Blad", "Blomst"],
     kommentar: {
       forkert: "Skyggen snyder dig – se efter tegnene.",
-      rigtig: "Ja! Du følger lyset mod sandheden!",
+      rigtig: "Ja! Platon mente at skygger kun er en svag afspejling af virkeligheden.",
     },
   },
 ];
@@ -73,7 +73,7 @@ export default function SkyggeQuiz() {
           navigate("/app/modul1/skyggequiz1Done");
         }
       }
-    }, 2000);
+    }, 4000);
   };
 
   const lukOverlay = () => setVisOverlay(false);

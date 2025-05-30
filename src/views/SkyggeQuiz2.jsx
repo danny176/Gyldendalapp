@@ -16,7 +16,7 @@ const spoergsmaal = {
   ],
   kommentar: {
     forkert: "Ikke helt rigtigt... prøv igen!",
-    rigtig: "Ja! Du følger lyset mod sandheden!",
+    rigtig: "Ja! Platon mente at vejen til erkendelse og sand indsigt går gennem at tvivle, stille spørgsmål og søge viden.",
   },
 };
 
@@ -43,7 +43,7 @@ export default function SkyggeQuiz() {
       if (korrekt) {
         navigate("/app/modul1/skyggequiz2Done");
       }
-    }, 2000);
+    }, 6000);
   };
 
   const lukOverlay = () => setVisOverlay(false);

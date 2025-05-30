@@ -103,7 +103,9 @@ const ShadowTruthGame = () => {
         };
         setMatched(updatedMatched);
         setIncorrectDrop(null);
-        setFeedback("Korrekt! Godt set.");
+        setFeedback(
+          "Korrekt! Platon mente, at det meste er skygger - tænk selv for at finde sandheden."
+        );
         setIsCorrect(true);
         setShowFeedback(true);
 
@@ -157,7 +159,7 @@ const ShadowTruthGame = () => {
         {showFeedback && (
           <div
             className={`feedback ${
-              isCorrect ? "stg-correct" : "stg-incorrect"
+              isCorrect ? "stg-correct" : "stg-incorrectfeedback"
             }`}
           >
             {feedback}

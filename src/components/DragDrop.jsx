@@ -143,7 +143,9 @@ const DragDropGame = () => {
       if (CORRECT_MATCHES[overId] === conceptId) {
         setMatched((prev) => ({ ...prev, [overId]: conceptId }));
         setIncorrectDrop(null);
-        setFeedback("Korrekt! Godt klaret.");
+        setFeedback(
+          "Korrekt. Platon mente at de fleste lever i skyggerne. Kun ved at tænke selv kan vi finde vejen til sandhedens lys."
+        );
         setIsCorrect(true);
       } else {
         setIncorrectDrop(overId);
@@ -156,7 +158,7 @@ const DragDropGame = () => {
       setTimeout(() => {
         setShowFeedback(false);
         setIncorrectDrop(null);
-      }, 2000);
+      }, 4000);
     }
   };
 
@@ -175,8 +177,8 @@ const DragDropGame = () => {
         <div className="tekstinfo">
           <h4>Hvilke begreber passer sammen?</h4>
           <h3>
-            Se godt på de fire begreber og udsagn. Sæt dem der passer sammen
-            ved at trække stenene op
+            Se godt på de fire begreber og udsagn. Sæt dem der passer sammen ved
+            at trække stenene op
           </h3>
         </div>
         <div className="drop-container">
@@ -205,6 +207,5 @@ const DragDropGame = () => {
     </DndContext>
   );
 };
-
 
 export default DragDropGame;
