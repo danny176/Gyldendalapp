@@ -33,7 +33,7 @@
 .formcontainer h4 {
   color: #000;
   font-family: "New-Zen";
-  font-size: 5vw;
+  font-size: 4vw;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -71,6 +71,7 @@
 }
 
 .loginknap {
+  margin-top: 6vh;
   border-radius: 20px;
   background: var(--bl, #0eb7de);
   padding: 2.5vh 0px;
