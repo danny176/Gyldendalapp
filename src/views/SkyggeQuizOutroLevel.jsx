@@ -4,15 +4,19 @@ import outroVideo from "../assets/levelklaret.mp4";
 import BadgeSVG from "../assets/badge.svg";
 import GenstandSVG from "../assets/Blomstgenstand.svg";
 import KrydsSVG from "../assets/icons/lukiconsort.svg";
+import { useBadge } from "../context/BadgeContext";
+
 
 const LevelsPageComplete = () => {
   const videoRef = useRef(null);
   const [showPopup, setShowPopup] = useState(false);
   const navigate = useNavigate();
+  const { setBadgeCount } = useBadge();
 
   useEffect(() => {
     const handleEnded = () => {
       setShowPopup(true);
+      setBadgeCount((prev) => prev + 1);
     };
 
     const video = videoRef.current;

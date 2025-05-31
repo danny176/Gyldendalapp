@@ -8,10 +8,12 @@ import leaderboard from "../assets/icons/leaderboardicon.svg";
 import ugenemne from "../assets/icons/ugenemnefor.svg";
 import badge from "../assets/badge.svg";
 import { useAvatar } from "../context/AvatarContext";
+import { useBadge } from "../context/BadgeContext";
 
 function Forside() {
   const { user } = useAuth();
   const { avatarSrc } = useAvatar();
+  const { badgeCount } = useBadge();
 
   return (
     <div className="forside-container">
@@ -24,7 +26,7 @@ function Forside() {
             </h2>
             <div className="badgeogantal">
               <img src={badge} alt="badge" className="badgeicon" />
-              <h5>0</h5>
+              <h5>{badgeCount}</h5>
             </div>
           </div>
         </div>

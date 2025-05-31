@@ -5,6 +5,7 @@ import plusVen from "../assets/icons/plusvenicon.svg";
 import badge from "../assets/badge.svg";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
+import { useBadge } from "../context/BadgeContext";
 
 function Venner() {
   const navigate = useNavigate();
@@ -12,6 +13,7 @@ function Venner() {
     alert("Liste over venner");
   };
   const { user } = useAuth();
+  const { badgeCount } = useBadge();
 
   return (
     <div className="venner-container">
@@ -53,11 +55,11 @@ function Venner() {
             </div>
           </div>
           <div className="top4knapbruger">
-            <h3>6.</h3>
+            <h3>7.</h3>
             <h5>{user?.displayName || "Bruger"}</h5>
             <div className="badgeogantal">
               <img src={badge} alt="badge" className="badgeicon" />
-              <h4>0</h4>
+              <h4>{badgeCount}</h4>
             </div>
           </div>
         </div>
