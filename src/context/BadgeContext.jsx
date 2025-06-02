@@ -14,5 +14,5 @@ export const BadgeProvider = ({ children }) => {
   );
 };
 
-// Custom hook
+// andre komponenter kan bruge for at læse/opdatere badgeCount
 export const useBadge = () => useContext(BadgeContext);
